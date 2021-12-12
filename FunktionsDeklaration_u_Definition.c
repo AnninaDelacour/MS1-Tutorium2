@@ -11,7 +11,7 @@
  int = Rückgabetyp = Datentyp
  main = Funktionsname
  () = Parameterliste, die leer sein kann
- {} = Function body
+ {} = Function body bzw. Anweisungsblock
 
  Weil wir also einen Rückgabetyp vom Datentyp "int" haben, geben wir eine Ganzzahl mit "return" zurück
  -> WH: Erfolgreicher Programmablauf = return 0
@@ -20,14 +20,7 @@
 
 
 // Die Funktion printIfEven wird hier deklariert UND definiert!
-void printIfEven(int number)
-{
-    if((number % 2) == 0)
-    {
-        printf("%d\n", number);
-        // weil wir void verwenden, brauchen wir kein return-Statement!
-    }
-}
+void printIfEven(int number);
 
 
 // Die Funktion receiveUserInput() wird hier nur deklariert! Wir müssen sie noch nicht definieren.
@@ -46,7 +39,10 @@ int main()
 }
 
 
-receiveUserInput()
+// Wir müssen immer den Datentyp angeben, da sonst eine implizite Deklaration zum Datentyp int vorgenommen wird
+// und wir nicht immer mit diesem Datentyp arbeiten!
+
+int receiveUserInput()
 {
     int userInput;
 
@@ -56,3 +52,12 @@ receiveUserInput()
 
     return userInput;
 }
+
+void printIfEven(int number)
+{
+    if((number % 2) == 0)
+    {
+        printf("%d\n", number);
+    }
+}
+

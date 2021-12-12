@@ -27,3 +27,22 @@ int main(int argc, char *argv[])
     }
     return EXIT_SUCCESS;
 }
+
+
+
+int zeilen = atol(argv[1]); // Initalisierung der Zeilenanzahl
+
+for (int i = 0 ; i < zeilen+1; i+=1) { // Zeilenanzahl
+printf ("\r"); // Sprung an den Anfang der aktuellen Bildschirmzeile
+for (int l = zeilen-i; l > 0; l-=1){ //Leerzeichen einfügen nach Anzahl der Zeilen
+printf (" ");
+}
+for (int s = 1; s < i*2; s+=1) { // Sterne einfügen nach Zeilenanzahl
+printf ("*");
+}
+if ((i < zeilen) && (i > 0)){
+printf (" \n");
+}
+}
+
+return 0;
